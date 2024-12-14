@@ -1,0 +1,14 @@
+{
+    "runs": [
+        { "date": "2024-12-01", "distance": 5, "time": 30, "pace": 6.00, "calories": 250 },
+        { "date": "2024-12-02", "distance": 3, "time": 18, "pace": 6.00, "calories": 150 }
+    ],
+    "friends": [
+        { "id": "123456" },
+        { "id": "789012" }
+    ],
+    "comments": [
+        "오늘도 열심히 뛰셨네요!",
+        "대단하세요!"
+    ]
+}
