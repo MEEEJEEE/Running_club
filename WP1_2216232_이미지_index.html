@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>러닝 기록 앱</title>
     <link rel="stylesheet" href="./WP1_2216232_이미지_styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -17,10 +17,13 @@
         </nav>
     </header>
     <main>
+        <!-- 통계 섹션 -->
         <section id="statistics">
-            <h2>통계</h2>
-            <canvas id="run-stats-chart"></canvas> <!-- 그래프 추가 -->
+            <h2>통계 (월 단위)</h2>
+            <canvas id="run-stats-chart"></canvas>
         </section>
+
+        <!-- 러닝 기록 섹션 -->
         <section id="run-history">
             <h2>러닝 기록</h2>
             <form id="run-form">
@@ -28,9 +31,10 @@
                 <input type="date" id="date" required>
                 <label for="distance-input">킬로미터:</label>
                 <input type="number" id="distance-input" step="0.5" required>
-                <label for="time-minutes">시간:</label>
-                <input type="number" id="time-minutes" placeholder="분" required>
-                <input type="number" id="time-seconds" placeholder="초" required>
+                <label for="time-minutes">시간 (분):</label>
+                <input type="number" id="time-minutes" required>
+                <label for="time-seconds">시간 (초):</label>
+                <input type="number" id="time-seconds" required>
                 <button type="submit">기록 추가</button>
                 <select id="sort-options">
                     <option value="latest">최신 날짜 순</option>
@@ -39,10 +43,12 @@
             </form>
             <ul id="history-list"></ul>
         </section>
+
+        <!-- 목표 달성도 섹션 -->
         <section id="progress">
             <h2>목표 달성도</h2>
             <div id="goal-container">
-                <p>목표 거리: 50km</p>
+                <p>목표 거리: <span id="goal-distance">50</span>km</p>
                 <progress id="goal-progress" value="0" max="50"></progress>
                 <p id="goal-percentage">0%</p>
             </div>

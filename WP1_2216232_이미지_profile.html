@@ -18,13 +18,24 @@
     <main>
         <section id="profile">
             <h2>프로필 정보</h2>
-            <img src="C:\Users\SM-PC\OneDrive\바탕 화면\웹프\WP1_2216232_이미지_기말과제\2216232_myimage.jpg.jpg" alt="프로필 사진" id="profile-picture">
+            <img id="profile-picture" alt="프로필 사진" class="profile-picture">
+            <form id="profile-form">
+                <label for="profile-upload">프로필 사진 업로드:</label>
+                <input type="file" id="profile-upload" accept="image/*">
+                <button type="submit">저장</button>
+            </form>
             <p>아이디: <span id="user-id">123456</span></p>
             <p>총 달린 거리: <span id="total-distance">0 km</span></p>
             <p>평균 페이스: <span id="average-pace">0.00</span> 분/km</p>
-            <p>평균 칼로리: <span id="average-calories">0.00</span> kcal</p>
+        </section>
+        <section id="goal-update">
+            <h2>목표 달성도 수정</h2>
+            <div id="goal-buttons">
+                <button id="goal-up">▲</button>
+                <button id="goal-down">▼</button>
+            </div>
         </section>
     </main>
-    <script src="./WP1_2216232_이미지_main.js"></script>
+    <script src="./WP1_2216232_이미지_profile.js"></script>
 </body>
 </html>

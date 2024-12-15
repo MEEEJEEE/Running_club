@@ -1,40 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
     const friendList = document.getElementById("friend-list");
 
+    // 친구 데이터 예시
     const friends = [
         {
-            nickname: "조수진수",
+            name: "조수진수",
             id: "12345",
-            recentRecord: "11.17 5km 31’ 16”",
-            totalDistance: "10%",
-            img: "C:\\Users\\SM-PC\\OneDrive\\바탕 화면\\웹프\\WP1_2216232_이미지_기말과제\\2216232_jinsu.jpg.jpg",
+            photo: "./WP1_2216232_이미지_friend1.jpg",
+            recentRecord: "11.17 / 5km / 31'16''",
+            goalProgress: "10%",
         },
         {
-            nickname: "신솔솔",
+            name: "신솔솔",
             id: "67890",
-            recentRecord: "11.27 3km 17’ 02”",
-            totalDistance: "30%",
-            img: "C:\\Users\\SM-PC\\OneDrive\\바탕 화면\\웹프\\WP1_2216232_이미지_기말과제\\2216232_sol.jpg.png",
+            photo: "./WP1_2216232_이미지_friend2.jpg",
+            recentRecord: "11.27 / 3km / 17'02''",
+            goalProgress: "30%",
         },
         {
-            nickname: "바비",
+            name: "바비",
             id: "54321",
-            recentRecord: "12.03 20km 10’ 34”",
-            totalDistance: "60%",
-            img: "C:\\Users\\SM-PC\\OneDrive\\바탕 화면\\웹프\\WP1_2216232_이미지_기말과제\\2216232_babie.jpg.jpg",
+            photo: "./WP1_2216232_이미지_friend3.jpg",
+            recentRecord: "12.03 / 20km / 10'34''",
+            goalProgress: "60%",
         },
     ];
 
-    friends.forEach((friend) => {
+    // 친구 카드 생성 함수
+    const createFriendCard = (friend) => {
         const card = document.createElement("div");
-        card.className = "friend-card";
-        card.innerHTML = `
-            <img src="${friend.img}" alt="프로필 사진" class="friend-picture">
-            <h3>${friend.nickname}</h3>
-            <p>ID: ${friend.id}</p>
-            <p>최근 기록: ${friend.recentRecord}</p>
-            <p>목표 달성율: ${friend.totalDistance}</p>
-        `;
+        card.classList.add("friend-card");
+
+        const photo = document.createElement("img");
+        photo.src = friend.photo;
+        photo.alt = `${friend.name}의 프로필 사진`;
+
+        const info = document.createElement("div");
+        info.classList.add("friend-info");
+
+        const name = document.createElement("span");
+        name.textContent = `닉네임: ${friend.name}`;
+
+        const id = document.createElement("span");
+        id.textContent = `아이디: ${friend.id}`;
+
+        const record = document.createElement("span");
+        record.textContent = `최근 기록: ${friend.recentRecord}`;
+
+        const progress = document.createElement("span");
+        progress.textContent = `목표 달성도: ${friend.goalProgress}`;
+
+        info.appendChild(name);
+        info.appendChild(id);
+        info.appendChild(record);
+        info.appendChild(progress);
+
+        card.appendChild(photo);
+        card.appendChild(info);
+
+        return card;
+    };
+
+    // 친구 목록 렌더링
+    friends.forEach((friend) => {
+        const card = createFriendCard(friend);
         friendList.appendChild(card);
     });
 });

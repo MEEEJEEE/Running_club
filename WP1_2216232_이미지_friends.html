@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>러닝 기록 앱</title>
+    <title>친구 관리</title>
     <link rel="stylesheet" href="./WP1_2216232_이미지_styles.css">
 </head>
 <body>
     <header>
-        <h1>러닝 기록 앱</h1>
+        <h1>친구 관리</h1>
         <nav>
             <a href="./WP1_2216232_이미지_index.html">홈</a>
             <a href="./WP1_2216232_이미지_friends.html">친구</a>
@@ -16,33 +16,13 @@
         </nav>
     </header>
     <main>
-        <section id="total-distance">
-            <h2>총 달린 거리</h2>
-            <p id="distance">0 km</p>
-        </section>
-        <section id="run-history">
-            <h2>러닝 기록</h2>
-            <form id="run-form">
-                <label for="date">날짜:</label>
-                <input type="date" id="date" required>
-                <label for="distance-input">킬로미터:</label>
-                <input type="number" id="distance-input" step="0.5" required>
-                <label for="time-minutes">시간:</label>
-                <input type="number" id="time-minutes" placeholder="분" required>
-                <input type="number" id="time-seconds" placeholder="초" required>
-                <button type="submit">기록 추가</button>
-            </form>
-            <ul id="history-list"></ul>
-        </section>
-        <section id="progress">
-            <h2>목표 달성도</h2>
-            <div id="goal-container">
-                <p>목표 거리: 50km</p>
-                <progress id="goal-progress" value="0" max="50"></progress>
-                <p id="goal-percentage">0%</p>
+        <section id="friends">
+            <h2>친구 목록</h2>
+            <div id="friend-list">
+                <!-- 친구 정보가 JavaScript에서 동적으로 생성됩니다 -->
             </div>
         </section>
     </main>
-    <script src="./WP1_2216232_이미지_main.js"></script>
+    <script src="./WP1_2216232_이미지_friends.js"></script>
 </body>
 </html>
