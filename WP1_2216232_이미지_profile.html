@@ -18,21 +18,17 @@
     <main>
         <section id="profile">
             <h2>프로필 정보</h2>
-            <img id="profile-picture" alt="프로필 사진" class="profile-picture">
-            <form id="profile-form">
-                <label for="profile-upload">프로필 사진 업로드:</label>
-                <input type="file" id="profile-upload" accept="image/*">
-                <button type="submit">저장</button>
-            </form>
-            <p>아이디: <span id="user-id">123456</span></p>
-            <p>총 달린 거리: <span id="total-distance">0 km</span></p>
-            <p>평균 페이스: <span id="average-pace">0.00</span> 분/km</p>
-        </section>
-        <section id="goal-update">
-            <h2>목표 달성도 수정</h2>
-            <div id="goal-buttons">
+            <img src="./images/2216232_myimage.jpg.jpg" alt="프로필 사진" class="profile-picture">
+            <p>아이디: <span id="user-id">2216232</span></p>
+
+            <h3>목표 달성도</h3>
+            <p>목표 거리: <span id="current-goal">75</span> km</p>
+            <button id="edit-goal-button">수정</button>
+            <div id="goal-edit" style="display: none;">
                 <button id="goal-up">▲</button>
+                <input type="number" id="goal-input" value="75" min="1">
                 <button id="goal-down">▼</button>
+                <button id="save-goal">저장</button>
             </div>
         </section>
     </main>

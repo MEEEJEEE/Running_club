@@ -16,38 +16,43 @@
             <a href="./WP1_2216232_이미지_profile.html">내 정보</a>
         </nav>
     </header>
+
     <main>
-        <!-- 통계와 목표 달성도 -->
-        <section id="statistics-container">
-            <div id="statistics">
-                <h2>통계 (월 단위)</h2>
-                <canvas id="run-stats-chart"></canvas>
-            </div>
-            <div id="progress">
-                <h2>목표 달성도</h2>
-                <p>목표 거리: <span id="goal-distance">50</span>km</p>
-                <progress id="goal-progress" value="0" max="50"></progress>
-                <p id="goal-percentage">0%</p>
-            </div>
+        <!-- 통계 섹션 -->
+        <section id="statistics">
+            <h2>통계 (월 단위)</h2>
+            <canvas id="run-stats-chart"></canvas>
+        </section>
+
+        <!-- 목표 달성도 -->
+        <section id="progress">
+            <h2>목표 달성도</h2>
+            <p>목표 거리: <span id="goal-distance">0</span> km</p>
+            <progress id="goal-progress" value="0" max="0"></progress>
+            <p id="goal-percentage">0%</p>
         </section>
 
         <!-- 러닝 기록 -->
         <section id="run-history">
             <h2>러닝 기록</h2>
+            <button id="sort-latest">최신순</button>
+            <button id="sort-distance-asc">거리순 (오름차순)</button>
+            <button id="sort-distance-desc">거리순 (내림차순)</button>
             <form id="run-form">
                 <label for="date">날짜:</label>
                 <input type="date" id="date" required>
                 <label for="distance-input">킬로미터:</label>
-                <input type="number" id="distance-input" step="0.5" required>
+                <input type="number" id="distance-input" step="0.1" required>
                 <label for="time-minutes">시간 (분):</label>
-                <input type="number" id="time-minutes" required>
+                <input type="number" id="time-minutes" min="0" required>
                 <label for="time-seconds">시간 (초):</label>
-                <input type="number" id="time-seconds" required>
+                <input type="number" id="time-seconds" min="0" max="59" required>
                 <button type="submit">기록 추가</button>
             </form>
             <ul id="history-list"></ul>
         </section>
     </main>
+
     <script src="./WP1_2216232_이미지_main.js"></script>
 </body>
 </html>

@@ -1,26 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const goalUpButton = document.getElementById("goal-up");
-    const goalDownButton = document.getElementById("goal-down");
-    const goalDistanceElem = document.getElementById("goal-distance");
+    const currentGoal = document.getElementById("current-goal");
+    const editGoalButton = document.getElementById("edit-goal-button");
+    const goalEdit = document.getElementById("goal-edit");
+    const goalInput = document.getElementById("goal-input");
+    const saveGoal = document.getElementById("save-goal");
+    const goalUp = document.getElementById("goal-up");
+    const goalDown = document.getElementById("goal-down");
 
-    let goalDistance = JSON.parse(localStorage.getItem("goalDistance")) || 50;
+    let goalDistance = 75;
 
-    goalDistanceElem.textContent = goalDistance;
-
-    const updateGoalDistance = () => {
-        localStorage.setItem("goalDistance", JSON.stringify(goalDistance));
-        goalDistanceElem.textContent = goalDistance;
+    const toggleEdit = (show) => {
+        goalEdit.style.display = show ? "block" : "none";
+        editGoalButton.style.display = show ? "none" : "inline-block";
     };
 
-    goalUpButton.addEventListener("click", () => {
-        goalDistance += 1;
-        updateGoalDistance();
+    editGoalButton.addEventListener("click", () => {
+        goalInput.value = goalDistance;
+        toggleEdit(true);
     });
 
-    goalDownButton.addEventListener("click", () => {
-        if (goalDistance > 1) {
-            goalDistance -= 1;
-            updateGoalDistance();
+    goalUp.addEventListener("click", () => {
+        goalInput.value = parseInt(goalInput.value) + 1;
+    });
+
+    goalDown.addEventListener("click", () => {
+        if (goalInput.value > 1) {
+            goalInput.value = parseInt(goalInput.value) - 1;
         }
     });
+
+    saveGoal.addEventListener("click", () => {
+        goalDistance = parseInt(goalInput.value);
+        currentGoal.textContent = goalDistance;
+        localStorage.setItem("goalDistance", goalDistance);
+        toggleEdit(false);
+    });
+
+    currentGoal.textContent = localStorage.getItem("goalDistance") || goalDistance;
 });
