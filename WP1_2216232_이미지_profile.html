@@ -15,20 +15,17 @@
             <a href="./WP1_2216232_이미지_profile.html">내 정보</a>
         </nav>
     </header>
+
     <main>
         <section id="profile">
             <h2>프로필 정보</h2>
             <img src="./images/2216232_myimage.jpg.jpg" alt="프로필 사진" class="profile-picture">
-            <p>아이디: <span id="user-id">2216232</span></p>
-
-            <h3>목표 달성도</h3>
-            <p>목표 거리: <span id="current-goal">75</span> km</p>
-            <button id="edit-goal-button">수정</button>
-            <div id="goal-edit" style="display: none;">
-                <button id="goal-up">▲</button>
-                <input type="number" id="goal-input" value="75" min="1">
-                <button id="goal-down">▼</button>
-                <button id="save-goal">저장</button>
+            <p><strong>아이디:</strong> 2216232</p>
+            <p><strong>목표 거리:</strong> <span id="goal-distance">75</span> km</p>
+            <button id="edit-goal-btn">수정</button>
+            <div id="goal-edit" style="display:none;">
+                <input type="number" id="goal-input" min="1" max="1000" value="75">
+                <button id="save-goal-btn">저장</button>
             </div>
         </section>
     </main>
